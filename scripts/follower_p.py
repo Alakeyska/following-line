@@ -38,7 +38,9 @@ class Follower:
       self.twist.angular.z = -float(err) / 300
       self.cmd_vel_pub.publish(self.twist)
       # END CONTROL
-    cv2.imshow("window", image)
+    cv2.imshow("window", cv2.resize(image, (960, 540)))
+    # cv2.imshow("window", image)
+
     cv2.waitKey(3)
 
 rospy.init_node('follower')
